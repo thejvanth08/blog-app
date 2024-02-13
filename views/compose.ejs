@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- reusing partials -->
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <h1>compose page</h1>
+    <form action="/add-blog" method="POST">
+      <label for="title">Title<input id="title" type="text" /></label>
+      <label for="content">Content
+        <textarea name="" id="content cols="30" rows="10"></textarea>
+      </label>
+      <button type="submit">submit</button>
+    </form>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>
