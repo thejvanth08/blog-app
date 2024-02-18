@@ -3,17 +3,34 @@
   <!-- reusing partials -->
   <%- include("./partials/head.ejs") %>
   <body>
-    <h1>compose page</h1>
-    <form action="/add-blog" method="POST">
-      <label for="title"
-        >Title<input name="title" value="" id="title" type="text"
-      /></label>
-      <label for="content"
-        >Content
-        <textarea name="content" id="content" cols="30" rows="10"></textarea>
-      </label>
-      <button type="submit">submit</button>
-    </form>
+    <%- include("./partials/nav.ejs", {context: "compose"} ) %>
+    <h1>Post Your Blog</h1>
+    <div class="max-container compose-main">
+      <div class="compose-container">
+        <form action="/add-blog" method="POST">
+          <label class="title-label" for="title">Title</label
+          ><input
+            class="title-input"
+            name="title"
+            value=""
+            id="title"
+            type="text"
+          />
+          <label class="content-label" for="content">Content</label>
+          <textarea
+            class="content-input"
+            name="content"
+            id="content"
+            cols="30"
+            rows="10"
+          ></textarea>
+
+          <div class="btn-container">
+            <button class="btn" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
     <%- include("./partials/footer.ejs") %>
   </body>
 </html>

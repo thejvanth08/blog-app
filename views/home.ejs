@@ -3,14 +3,17 @@
   <!-- reusing partials -->
   <%- include("./partials/head.ejs") %>
   <body>
-    <%- include("./partials/nav.ejs") %>
+    <%- include("./partials/nav.ejs", {context: "home"}); %>
+    <main class="max-container">
+      <h1>Your Blogs</h1>
 
-    <h1>home page</h1>
-
-    <% if(blogs.length > 0) { %> <% for(let i = 0; i < blogs.length; i++) { %>
-    <h1><%= blogs[i].title %></h1>
-    <p><%= blogs[i].content %></p>
-    <% } %> <% } %>
+      <% if(blogs.length > 0) { %> <% for(let i = 0; i < blogs.length; i++) { %>
+      <div class="blog">
+        <h2 class="blog-title"><%= blogs[i].title %></h2>
+        <p class="blog-content"><%= blogs[i].content %></p>
+      </div>
+      <% } %> <% } %>
+    </main>
 
     <!-- footer -->
     <%- include("./partials/footer.ejs") %>

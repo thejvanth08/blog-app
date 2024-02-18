@@ -1,4 +1,13 @@
-<nav>
-  <div>logo</div>
-  <div><a href="/compose-page">new post</a></div>
-</nav>
+<header>
+  <nav class="nav-bar max-container">
+    <div class="logo">
+      <a href=""><span class="logo-img">⚡</span> Super Blogs</a>
+    </div>
+
+    <% if(context == "home") { %>
+    <div><a class="btn" href="/compose-page">New Post</a></div>
+    <% } else { %>
+    <div><a class="btn" href="/">Go Home</a></div>
+    <% } %>
+  </nav>
+</header>
